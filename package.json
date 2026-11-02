@@ -1,0 +1,21 @@
+{
+  "name": "agosph-local",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "format": "prettier --write frontend/src frontend/*.ts frontend/*.json scripts/dev.mjs package.json",
+    "start:local": "node scripts/dev.mjs",
+    "seed": ".venv\\Scripts\\python.exe -m backend.seed",
+    "test:backend": ".venv\\Scripts\\python.exe -m pytest tests -q",
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "test": "npm run test --workspace frontend",
+    "test:e2e": "npm run test:e2e --workspace frontend"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
+}
